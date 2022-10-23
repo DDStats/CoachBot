@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["do you know wayne glensky"],
   ["minnesota","oregon","wisconsin","california"],
   ["where you from", "where do you live","where is your home"],
   ["how do i skate","how do i start skating","i want to learn how to skate"],
@@ -39,6 +40,7 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
+  ["yes he is my main bro"],
   ["that is cool"],
   ["my home is inside a github repository what state are you from?"],
  ["Hi! Please view this link: <a href='www.skatingmagic.com/how-to-ice-skate-for-beginners/'>https://skatingmagic.com/how-to-ice-skate-for-beginners/</a>"],
