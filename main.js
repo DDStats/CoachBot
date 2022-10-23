@@ -9,7 +9,6 @@ var link = str.link("https://skatingmagic.com/how-to-ice-skate-for-beginners/");
 
 
 const prompts = [
-  ["How do I learn to skate?"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["You suck!", "you suck", "You suck"],
@@ -38,14 +37,13 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
-  ["Try this link"],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
     "Pretty well, how are you?",
     "Fantastic, how are you?"
   ],
-  ["Take off eh!", "Take off you hozer!", "Take off hozer!"],
+  ["Good hockey is good character", "Good hockey is good character", "Good hockey is good character"],
   [
     "Nothing much",
     "About to go to sleep",
