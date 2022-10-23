@@ -6,7 +6,9 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
-  ["How do I learn to skate?"],
+  ["how do i skate","how do i start skating","i want to learn how to skate"],
+  ["how do i do crossovers"],
+  ["how do i skate backwards"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["what are you doing", "what is going on", "what is up"],
@@ -34,7 +36,10 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
-  ["You have to practice"],
+ ["Hi! Please view this link: <a href='www.skatingmagic.com/how-to-ice-skate-for-beginners/'>https://skatingmagic.com/how-to-ice-skate-for-beginners/</a>"],
+  ["Hi! Please view this link: <a href='www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover/'>http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//</a>"],
+   ["Hi! Check this out: <a href='www.youtube.com/watch?v=yRSqqWyM74Y'>https://www.youtube.com/watch?v=yRSqqWyM74Y</a>"],
+  
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
@@ -57,7 +62,7 @@ const replies = [
   ["What about?", "Once upon a time..."],
   ["Tell me a story", "Tell me a joke", "Tell me about yourself"],
   ["Bye", "Goodbye", "See you later"],
-  ["Sushi", "Pizza"],
+  ["Good healthy food without the sugar"],
   ["Bro!"],
   ["Great question"],
   ["That's ok", "I understand", "What do you want to talk about?"],
