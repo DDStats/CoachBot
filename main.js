@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "BOT";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["How do I learn to skate?"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["You suck!", "you suck", "You suck"],
@@ -34,6 +35,7 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
+  ["Try this link to start:https://skatingmagic.com/how-to-ice-skate-for-beginners/"],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
