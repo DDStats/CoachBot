@@ -6,14 +6,16 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["what is your favorite nhl team", "what is your favorite team", "which nhl team do you like"],
+  ["who is your favorite player"],
   ["how do i become a good passer","good passing","i want to be a good passer","i want to improve my passing"],
   ["how do i become a good stick handler","how to improve stick handling", "how do improve my stick handling","stick handling"],
   ["how do i skate good","i wanna skate good", "i want to be a good skater"," how to be good","how do i get faster", "how to get fast", "how to skate fast"],
   ["do you know wayne glensky"],
   ["where you from", "where do you live","where is your home"],
   ["how do i skate","how do i start skating","i want to learn how to skate"],
-  ["how do i do crossovers"],
-  ["how do i skate backwards"],
+  ["how do i do crossovers","crossovers"],
+  ["how do i skate backwards","skating backwards","i want to skate backwards good"],
   ["do you know ddstats"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
@@ -42,6 +44,8 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
+  ["the wild of course"],
+  ["currently Cale Makar but all time probably Jagr or Gretzky"],
   ["you can do it: <a href='www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer'>https://www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer</a>"],
   ["practice...practice and check this out: <a href='www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/'>https://www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/</a>"],
   ["this might help: <a href='www.hockeyhow.com/how-to-skate-faster/'>https://hockeyhow.com/how-to-skate-faster/</a>"],
