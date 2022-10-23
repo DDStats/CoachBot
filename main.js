@@ -3,15 +3,12 @@ const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 const BOT_IMG = "bot.png";
 const PERSON_IMG = "user.png";
-const BOT_NAME = "BOT";
+const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
-var link = str.link("https://skatingmagic.com/how-to-ice-skate-for-beginners/");
-
-
 const prompts = [
+  ["How do I learn to skate?"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
-  ["You suck!", "you suck", "You suck"],
   ["what are you doing", "what is going on", "what is up"],
   ["how old are you"],
   ["who are you", "are you human", "are you bot", "are you human or bot"],
@@ -37,13 +34,13 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
+  ["You have to practice"],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
     "Pretty well, how are you?",
     "Fantastic, how are you?"
   ],
-  ["Good hockey is good character", "Good hockey is good character", "Good hockey is good character"],
   [
     "Nothing much",
     "About to go to sleep",
@@ -51,8 +48,8 @@ const replies = [
     "I don't know actually"
   ],
   ["I am infinite"],
-  ["I am just a coach", "I am a bot. What are you?"],
-  ["DDStats created me"],
+  ["I am just a bot", "I am a bot. What are you?"],
+  ["The one true God, JavaScript"],
   ["I am nameless", "I don't have a name"],
   ["I love you too", "Me too"],
   ["Have you ever felt bad?", "Glad to hear it"],
