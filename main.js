@@ -5,6 +5,9 @@ const BOT_IMG = "bot.png";
 const PERSON_IMG = "user.png";
 const BOT_NAME = "BOT";
 const PERSON_NAME = "Player";
+var link = str.link("https://skatingmagic.com/how-to-ice-skate-for-beginners/");
+
+
 const prompts = [
   ["How do I learn to skate?"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
@@ -35,7 +38,7 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
-  ["Try this link to start:https://skatingmagic.com/how-to-ice-skate-for-beginners/"],
+  ["Try this link" + link],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
