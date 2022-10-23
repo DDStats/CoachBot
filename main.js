@@ -38,7 +38,7 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
-  ["my home is inside a GitHub repository, where are you from"],
+  ["my home is inside a GitHub repository where are you from"],
  ["Hi! Please view this link: <a href='www.skatingmagic.com/how-to-ice-skate-for-beginners/'>https://skatingmagic.com/how-to-ice-skate-for-beginners/</a>"],
   ["Hi! Please view this link: <a href='www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover/'>http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//</a>"],
    ["Hi! Check this out: <a href='www.youtube.com/watch?v=yRSqqWyM74Y'>https://www.youtube.com/watch?v=yRSqqWyM74Y</a>"],
