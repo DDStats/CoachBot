@@ -7,8 +7,8 @@ const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
   ["what is your favorite song"],
-  ["what is your favorite nhl team", "what is your favorite team", "which nhl team do you like"],
-  ["who is your favorite player"],
+  ["what is your favorite nhl team", "what is your favorite team", "which nhl team do you like","which team do you like"],
+  ["who is your favorite player","which player do you like"],
   ["how do i become a good passer","good passing","i want to be a good passer","i want to improve my passing"],
   ["how do i become a good stick handler","how to improve stick handling", "how do improve my stick handling","stick handling"],
   ["how do i skate good","i wanna skate good", "i want to be a good skater"," how to be good","how do i get faster", "how to get fast", "how to skate fast"],
@@ -75,7 +75,7 @@ const replies = [
   ["I am nameless", "I don't have a name"],
   ["I love you too", "Me too"],
   ["Have you ever felt bad?", "Glad to hear it"],
-  ["Why?", "Why? You shouldn't!", "Try watching TV"],
+  ["Why?", "Why? You shouldn't!", "Practice stick handling or shooting"],
   ["What about?", "Once upon a time..."],
   ["Tell me a story", "Tell me a joke", "Tell me about yourself"],
   ["Bye", "Goodbye", "See you later"],
