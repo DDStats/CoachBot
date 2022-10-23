@@ -50,7 +50,7 @@ const replies = [
   ["practice...practice and check this out: <a href='www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/'>https://www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/</a>"],
   ["this might help: <a href='www.hockeyhow.com/how-to-skate-faster/'>https://hockeyhow.com/how-to-skate-faster/</a>"],
   ["yes he is my main bro"],
-  ["that is cool"],
+
   ["my home is inside a github repository"],
  ["Hi! Please view this link: <a href='www.skatingmagic.com/how-to-ice-skate-for-beginners/'>https://skatingmagic.com/how-to-ice-skate-for-beginners/</a>"],
   ["Hi! Please view this link: <a href='www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover/'>http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//</a>"],
