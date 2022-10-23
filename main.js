@@ -6,6 +6,11 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["do you love hockey"],
+  ["do you play hockey"],
+  ["how do i improve my skills","how do i improve my hockey skills","how to improve my skills"],
+  ["what kind of skates should i buy", "what are the best skates","which skates are the best", "which hockey skates should i get","hockey skates"],
+  ["fart","poop","you suck","you stink", "your a looser","crap"],
   ["how do i become a powerful skater","how do I become the best skater"],
   ["what is your favorite song","do you like music"],
   ["what is your favorite nhl team", "what is your favorite team", "which nhl team do you like","which team do you like"],
@@ -46,6 +51,11 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
+  ["yes its the best game on the planet and in the universe"],
+  ["unfortunately i cannot...i am just a bot :("],
+  I"if you have some open or free skate time use that time to work on skills and challenge yourself by visualizing what you want to do or achieve"],
+  ["good quality good fitting skates are essential in becoming a good hockey player..just make sure they fit comfortably snug with sharpened and well maintained steel"],
+  ["thats not nice...good character is part of becoming a great hockey player"],
   ["you have to continually push yourself and challenge yourself everytime you skate...be creative in your skating"],
   ["mr. roboto by styxx"],
   ["the wild of course"],
