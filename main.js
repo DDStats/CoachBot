@@ -38,7 +38,7 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
-  ["Try this link" + link],
+  ["Try this link"],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
