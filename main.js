@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["what is your favorite song"],
   ["what is your favorite nhl team", "what is your favorite team", "which nhl team do you like"],
   ["who is your favorite player"],
   ["how do i become a good passer","good passing","i want to be a good passer","i want to improve my passing"],
@@ -44,21 +45,18 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
+  ["mr. roboto by styxx"],
   ["the wild of course"],
   ["currently Cale Makar but all time probably Jagr or Gretzky"],
   ["you can do it: <a href='www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer'>https://www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer</a>"],
   ["practice...practice and check this out: <a href='www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/'>https://www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/</a>"],
   ["this might help: <a href='www.hockeyhow.com/how-to-skate-faster/'>https://hockeyhow.com/how-to-skate-faster/</a>"],
   ["yes he is my main bro"],
-
   ["my home is inside a github repository"],
  ["Hi! Please view this link: <a href='www.skatingmagic.com/how-to-ice-skate-for-beginners/'>https://skatingmagic.com/how-to-ice-skate-for-beginners/</a>"],
   ["Hi! Please view this link: <a href='www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover/'>http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//</a>"],
     ["Hi! Check this out: <a href='www.youtube.com/watch?v=yRSqqWyM74Y'>https://www.youtube.com/watch?v=yRSqqWyM74Y</a>"],
   ["yes he is a good coach and my creator"],
- 
-
-  
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
