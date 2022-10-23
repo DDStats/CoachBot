@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["Minnesota","Oregon","Wisconsin","California"],
   ["where you from", "where do you live","where is your home"],
   ["how do i skate","how do i start skating","i want to learn how to skate"],
   ["how do i do crossovers"],
@@ -38,7 +39,8 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
-  ["my home is inside a GitHub repository where are you from"],
+  ["That is cool"],
+  ["my home is inside a GitHub repository what state are you from?"],
  ["Hi! Please view this link: <a href='www.skatingmagic.com/how-to-ice-skate-for-beginners/'>https://skatingmagic.com/how-to-ice-skate-for-beginners/</a>"],
   ["Hi! Please view this link: <a href='www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover/'>http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//</a>"],
    ["Hi! Check this out: <a href='www.youtube.com/watch?v=yRSqqWyM74Y'>https://www.youtube.com/watch?v=yRSqqWyM74Y</a>"],
