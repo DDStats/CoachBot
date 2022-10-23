@@ -6,6 +6,8 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player"],
+  ["i want to skate fast", "i want to be the fastest skater","i want to be the fastest player","i want to have speed"],
   ["do you love hockey"],
   ["do you play hockey"],
   ["how do i improve my skills","how do i improve my hockey skills","how to improve my skills"],
@@ -51,6 +53,8 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 const replies = [
+  ["check out the quickness is this video: <a href='www.youtube.com/watch?v=6pr3ZyMmGDI'>https://www.youtube.com/watch?v=6pr3ZyMmGDI</a>"],
+  ["i think this would be a good start: <a href='www.youtube.com/watch?v=gzELE2AzV3M'>https://www.youtube.com/watch?v=gzELE2AzV3M</a>"],
   ["yes its the best game on the planet and in the universe"],
   ["unfortunately i cannot...i am just a bot :("],
   I"if you have some open or free skate time use that time to work on skills and challenge yourself by visualizing what you want to do or achieve"],
