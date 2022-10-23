@@ -2,7 +2,7 @@
 :root {
   --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --msger-bg: #fff;
-  --left-msg-bg: linear-gradient(to right, #f895b9, #f44183);
+  --left-msg-bg: linear-gradient(to right,#d611f4, #88419b);
   --right-msg-bg: #ececec;
 }
 html {
@@ -40,8 +40,8 @@ body {
   justify-content: center;
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
-  background: #eee;
-  color: #666;
+  background: #d611f4;
+  color: gold;
 }
 .msger-header-title{
   display: flex;
@@ -124,7 +124,7 @@ body {
 .msger-inputarea {
   display: flex;
   padding: 10px;
-  background: #f44183;
+  background: #d611f4;
   border-radius: 0px 0px 10px 10px;
 }
 .msger-inputarea * {
@@ -142,7 +142,7 @@ body {
 .msger-send-btn {
   margin-left: 10px;
   background: transparent;
-  color: #fff;
+  color: gold;
   font-size: 1.5rem;
   cursor: pointer;
 }
