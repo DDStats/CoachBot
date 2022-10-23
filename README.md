@@ -1,5 +1,5 @@
 # CoachBot
-ChatBot using html css js
+CoachBot using html css js
 Hosted with ❤ by GitHub  
 
 Just a fun project to tap into some coding and hockey skills knowledge to provide a positive learning resource and experience.
