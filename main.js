@@ -72,7 +72,7 @@ const replies = [
   ["I am infinite"],
   ["I am just a bot", "I am a bot. What are you?"],
   ["ddstats created me with html, css & javascript"],
-  ["I am nameless", "I don't have a name"],
+  ["I am CoachBot", "Coach..short for CoachBot"],
   ["I love you too", "Me too"],
   ["Have you ever felt bad?", "Glad to hear it"],
   ["Why?", "Why? You shouldn't!", "Practice stick handling or shooting"],
