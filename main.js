@@ -4,10 +4,11 @@ const msgerChat = get(".msger-chat");
 const BOT_IMG = "bot.png";
 const PERSON_IMG = "user.png";
 const BOT_NAME = "BOT";
-const PERSON_NAME = "Coderider";
+const PERSON_NAME = "Player";
 const prompts = [
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
+  ["You suck!", "you suck", "You suck"],
   ["what are you doing", "what is going on", "what is up"],
   ["how old are you"],
   ["who are you", "are you human", "are you bot", "are you human or bot"],
@@ -39,6 +40,7 @@ const replies = [
     "Pretty well, how are you?",
     "Fantastic, how are you?"
   ],
+  ["Take off eh!", "Take off you hozer!", "Take off hozer!"],
   [
     "Nothing much",
     "About to go to sleep",
@@ -46,8 +48,8 @@ const replies = [
     "I don't know actually"
   ],
   ["I am infinite"],
-  ["I am just a bot", "I am a bot. What are you?"],
-  ["The one true God, JavaScript"],
+  ["I am just a coach", "I am a bot. What are you?"],
+  ["DDStats created me"],
   ["I am nameless", "I don't have a name"],
   ["I love you too", "Me too"],
   ["Have you ever felt bad?", "Glad to hear it"],
