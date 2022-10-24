@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["international falls","int'l falls"],
   ["what is your favorite number", "your favorite number","what number do you like"],
   ["do you play hockey","you play hockey","what do you do","what do you like to do"],
   ["how to zoro", "how to do the zoro","zoro","i want to zoro","zoro"],
@@ -21,10 +22,10 @@ const prompts = [
   ["what is your favorite song","do you like music"],
   ["what is your favorite nhl team", "what is your favorite team", "which nhl team do you like","which team do you like"],
   ["who is your favorite player","which player do you like", "who is the best player","whos your favorite player"],
-  ["how do i become a good passer","good passing","i want to be a good passer","i want to improve my passing"],
+  ["how do i become a good passer","good passing","i want to be a good passer","i want to improve my passing","passing"],
   ["how do i become a good stick handler","how to improve stick handling", "how do improve my stick handling","stick handling","good hands","silky hands"],
   ["how do i skate good","i wanna skate good", "i want to be a good skater"," how to be good","how do i get faster", "how to get fast", "how to skate fast"],
-  ["do you know wayne glensky"],
+  ["do you know wayne glensky","wayne glensky"],
   ["where you from", "where do you live","where is your home"],
   ["how do i skate","how do i start skating","i want to learn how to skate"],
   ["how do i do crossovers","crossovers"],
@@ -69,6 +70,7 @@ var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
 var link9 = str.link("https://www.youtube.com/watch?v=SYPMctwC93c");
 var link10 = str.link("https://www.youtube.com/watch?v=SDLofZuBEvc");
 const replies = [
+  ["lets go broncos"],
   ["i like 88"],
   ["i just coach online"],
   [link10],
