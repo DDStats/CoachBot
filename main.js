@@ -53,9 +53,9 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 
-var str = "This is link";
+var str = "Check this out";
 var link = str.link("https://www.youtube.com/watch?v=6pr3ZyMmGDI");
-var msg = "Check this out "+link;
+var msg =  str +link;
 const replies = [
   [msg],
   ["i think this would be a good start: <a href='www.youtube.com/watch?v=gzELE2AzV3M'>https://www.youtube.com/watch?v=gzELE2AzV3M</a>"],
