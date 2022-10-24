@@ -57,6 +57,11 @@ var str = "This link may help";
 var link = str.link("https://www.youtube.com/watch?v=6pr3ZyMmGDI");
 var link2 = str.link("https://www.youtube.com/watch?v=gzELE2AzV3M");
 var link3 = str.link("https://www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/");
+var link4 = str.link("https://hockeyhow.com/how-to-skate-faster/");
+var link5 = str.link("https://www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer");
+var link6 = str.link("https://skatingmagic.com/how-to-ice-skate-for-beginners/");
+var link7 = str.link("http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//");
+var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
 const replies = [
   [link],
   [link2],
@@ -69,14 +74,14 @@ const replies = [
   ["mr. roboto by styxx"],
   ["the wild of course"],
   ["currently Cale Makar but all time probably Jagr or Gretzky"],
-  ["you can do it: <a href='www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer'>https://www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer</a>"],
+  [link5],
   [link3],
-  ["this might help: <a href='www.hockeyhow.com/how-to-skate-faster/'>https://hockeyhow.com/how-to-skate-faster/</a>"],
+  [link4],
   ["yes he is my main bro"],
   ["my home is inside a github repository"],
- ["Hi! Please view this link: <a href='www.skatingmagic.com/how-to-ice-skate-for-beginners/'>https://skatingmagic.com/how-to-ice-skate-for-beginners/</a>"],
-  ["Hi! Please view this link: <a href='www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover/'>http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//</a>"],
-    ["Hi! Check this out: <a href='www.youtube.com/watch?v=yRSqqWyM74Y'>https://www.youtube.com/watch?v=yRSqqWyM74Y</a>"],
+ [link6],
+ [link7],
+ [link8],
   ["yes he is a good coach and my creator"],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
