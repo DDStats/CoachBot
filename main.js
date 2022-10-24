@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["how to zoro", "how to do the zoro","zoro","i want to zoro"],
   ["how to do the michigan","michigan","i want to do the michigan","i want to learn the michigan"],
   ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player","quick skating"],
   ["i want to skate fast", "i want to be the fastest skater","i want to be the fastest player","i want to have speed","skate fast"],
@@ -64,7 +65,9 @@ var link6 = str.link("https://skatingmagic.com/how-to-ice-skate-for-beginners/")
 var link7 = str.link("http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//");
 var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
 var link9 = str.link("https://www.youtube.com/watch?v=SYPMctwC93c");
+var link10 = str.link("https://www.youtube.com/watch?v=SDLofZuBEvc");
 const replies = [
+  [link10],
   [link9],
   [link],
   [link2],
