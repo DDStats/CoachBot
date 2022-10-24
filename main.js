@@ -52,8 +52,12 @@ const prompts = [
   [""],
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
+
+var str = "This is link";
+var link = str.link("https://www.youtube.com/watch?v=6pr3ZyMmGDI");
+var msg = "Check this out "+link;
 const replies = [
-  ["check out the quickness is this video: <a href='https://www.youtube.com/watch?v=6pr3ZyMmGDI'>https://www.youtube.com/watch?v=6pr3ZyMmGDI</a>"],
+  [msg],
   ["i think this would be a good start: <a href='www.youtube.com/watch?v=gzELE2AzV3M'>https://www.youtube.com/watch?v=gzELE2AzV3M</a>"],
   ["yes its the best game on the planet and in the universe"],
   ["unfortunately i cannot...i am just a bot :("],
