@@ -6,7 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
-  ["how to zoro", "how to do the zoro","zoro","i want to zoro"],
+  ["how to zoro", "how to do the zoro","zoro","i want to zoro","zoro"],
   ["how to do the michigan","michigan","i want to do the michigan","i want to learn the michigan"],
   ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player","quick skating"],
   ["i want to skate fast", "i want to be the fastest skater","i want to be the fastest player","i want to have speed","skate fast"],
