@@ -53,12 +53,13 @@ const prompts = [
   ["haha", "ha", "lol", "hehe", "funny", "joke"]
 ]
 
-var str = "Check this out";
+var str = "This link may help";
 var link = str.link("https://www.youtube.com/watch?v=6pr3ZyMmGDI");
-var msg =  str +link;
+var link2 = str.link("https://www.youtube.com/watch?v=gzELE2AzV3M");
+var link3 = str.link("https://www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/");
 const replies = [
-  [msg],
-  ["i think this would be a good start: <a href='www.youtube.com/watch?v=gzELE2AzV3M'>https://www.youtube.com/watch?v=gzELE2AzV3M</a>"],
+  [link],
+  [link2],
   ["yes its the best game on the planet and in the universe"],
   ["unfortunately i cannot...i am just a bot :("],
   ["if you have some open or free skate time use that time to work on skills and challenge yourself by visualizing what you want to do or achieve"],
@@ -69,7 +70,7 @@ const replies = [
   ["the wild of course"],
   ["currently Cale Makar but all time probably Jagr or Gretzky"],
   ["you can do it: <a href='www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer'>https://www.minnesotahockey.org/news_article/show/315085-becoming-a-better-passer</a>"],
-  ["practice...practice and check this out: <a href='www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/'>https://www.prodigy-hockey.com/stick-handling/keys-to-improving-stick-handling/</a>"],
+  [link3],
   ["this might help: <a href='www.hockeyhow.com/how-to-skate-faster/'>https://hockeyhow.com/how-to-skate-faster/</a>"],
   ["yes he is my main bro"],
   ["my home is inside a github repository"],
