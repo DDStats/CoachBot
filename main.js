@@ -6,6 +6,8 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["what is your favorite number", "your favorite number","what number do you like"],
+  ["do you play hockey","you play hockey","what do you do","what do you like to do"],
   ["how to zoro", "how to do the zoro","zoro","i want to zoro","zoro"],
   ["how to do the michigan","michigan","i want to do the michigan","i want to learn the michigan"],
   ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player","quick skating"],
@@ -67,6 +69,8 @@ var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
 var link9 = str.link("https://www.youtube.com/watch?v=SYPMctwC93c");
 var link10 = str.link("https://www.youtube.com/watch?v=SDLofZuBEvc");
 const replies = [
+  ["i like 88"],
+  ["i just coach online"],
   [link10],
   [link9],
   [link],
