@@ -9,7 +9,7 @@ const prompts = [
   ["what is your favorite number", "your favorite number","what number do you like"],
   ["do you play hockey","you play hockey","what do you do","what do you like to do"],
   ["how to zoro", "how to do the zoro","zoro","i want to zoro","zoro"],
-  ["how to do the michigan","michigan","i want to do the michigan","i want to learn the michigan"],
+  ["how to do the michigan","michigan","i want to do the michigan","i want to learn the michigan","how to michigan"],
   ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player","quick skating"],
   ["i want to skate fast", "i want to be the fastest skater","i want to be the fastest player","i want to have speed","skate fast"],
   ["do you love hockey","do you like hockey"],
