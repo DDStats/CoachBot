@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["wayne gretzky","gretzky"],
   ["international falls","int'l falls"],
   ["what is your favorite number", "your favorite number","what number do you like"],
   ["do you play hockey","you play hockey","what do you do","what do you like to do"],
@@ -70,6 +71,7 @@ var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
 var link9 = str.link("https://www.youtube.com/watch?v=SYPMctwC93c");
 var link10 = str.link("https://www.youtube.com/watch?v=SDLofZuBEvc");
 const replies = [
+  ["the great one"],
   ["lets go broncos"],
   ["i like 88"],
   ["i just coach online"],
