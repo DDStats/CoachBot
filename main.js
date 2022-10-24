@@ -57,7 +57,7 @@ const replies = [
   ["i think this would be a good start: <a href='www.youtube.com/watch?v=gzELE2AzV3M'>https://www.youtube.com/watch?v=gzELE2AzV3M</a>"],
   ["yes its the best game on the planet and in the universe"],
   ["unfortunately i cannot...i am just a bot :("],
-  I"if you have some open or free skate time use that time to work on skills and challenge yourself by visualizing what you want to do or achieve"],
+  ["if you have some open or free skate time use that time to work on skills and challenge yourself by visualizing what you want to do or achieve"],
   ["good quality good fitting skates are essential in becoming a good hockey player..just make sure they fit comfortably snug with sharpened and well maintained steel"],
   ["thats not nice...good character is part of becoming a great hockey player"],
   ["you have to continually push yourself and challenge yourself everytime you skate...be creative in your skating"],
