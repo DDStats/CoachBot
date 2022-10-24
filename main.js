@@ -6,6 +6,7 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["how to do the michigan","michigan","i want to do the michigan","i want to learn the michigan"],
   ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player","quick skating"],
   ["i want to skate fast", "i want to be the fastest skater","i want to be the fastest player","i want to have speed","skate fast"],
   ["do you love hockey","do you like hockey"],
@@ -18,7 +19,7 @@ const prompts = [
   ["what is your favorite nhl team", "what is your favorite team", "which nhl team do you like","which team do you like"],
   ["who is your favorite player","which player do you like", "who is the best player","whos your favorite player"],
   ["how do i become a good passer","good passing","i want to be a good passer","i want to improve my passing"],
-  ["how do i become a good stick handler","how to improve stick handling", "how do improve my stick handling","stick handling"],
+  ["how do i become a good stick handler","how to improve stick handling", "how do improve my stick handling","stick handling","good hands","silky hands"],
   ["how do i skate good","i wanna skate good", "i want to be a good skater"," how to be good","how do i get faster", "how to get fast", "how to skate fast"],
   ["do you know wayne glensky"],
   ["where you from", "where do you live","where is your home"],
@@ -62,7 +63,9 @@ var link5 = str.link("https://www.minnesotahockey.org/news_article/show/315085-b
 var link6 = str.link("https://skatingmagic.com/how-to-ice-skate-for-beginners/");
 var link7 = str.link("http://www.hockeytutorial.com/skating-tips/crossovers-hockey-in-detail-crossover//");
 var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
+var link9 = str.link("https://www.youtube.com/watch?v=SYPMctwC93c");
 const replies = [
+  [link9],
   [link],
   [link2],
   ["yes its the best game on the planet and in the universe"],
