@@ -6,8 +6,8 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
-  ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player"],
-  ["i want to skate fast", "i want to be the fastest skater","i want to be the fastest player","i want to have speed"],
+  ["i want to be quick","i want to be quicker","i want to be a quick player","i want to be a quick hockey player","quick skating"],
+  ["i want to skate fast", "i want to be the fastest skater","i want to be the fastest player","i want to have speed","skate fast"],
   ["do you love hockey","do you like hockey"],
   ["do you play hockey"],
   ["how do i improve my skills","how do i improve my hockey skills","how to improve my skills"],
