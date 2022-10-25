@@ -6,6 +6,8 @@ const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
 const prompts = [
+  ["hockey dekes", "moves","hockey moves","fakes","dekes"],
+  ["hockey"],
   ["wayne gretzky","gretzky"],
   ["international falls","int'l falls"],
   ["what is your favorite number", "your favorite number","what number do you like"],
@@ -70,7 +72,10 @@ var link7 = str.link("http://www.hockeytutorial.com/skating-tips/crossovers-hock
 var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
 var link9 = str.link("https://www.youtube.com/watch?v=SYPMctwC93c");
 var link10 = str.link("https://www.youtube.com/watch?v=SDLofZuBEvc");
+var link11 = str.link("https://www.youtube.com/watch?v=N7EBvc-PUII");
 const replies = [
+  [link11],
+  ["yep"],
   ["the great one"],
   ["lets go broncos"],
   ["i like 88"],
