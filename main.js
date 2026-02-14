@@ -77,6 +77,8 @@ const prompts = [
   ["edge and flow","edge & flow","edge and flow hockey","edgeandflow","edge and flow skills","edge and flow training"],
   ["contact darren dunbar","contact darren","contact edge and flow","contact edge & flow","edge and flow contact","edge & flow contact","contact coach","contact form"],
   ["teams coach dunbar has coached","teams coached by coach dunbar","what teams has coach dunbar coached","coach dunbar teams","darren dunbar teams","coached teams"],
+  ["how do i dangle","how do i dangle the puck","how do i beat a defender","how do i beat an opponent","stick skills to beat a defender","dangles"],
+  ["how do i snipe","snipe","how do i shoot accurately","shoot accurately","how do i pick corners","beat the goalie","shoot the puck accurately"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["what are you doing", "what is going on", "what is up", "whats up"],
@@ -189,6 +191,8 @@ const replies = [
   ["Edge & Flow focuses on edge control and skill flow. Learn more here: " + link12],
   ["You can contact Darren Dunbar / Edge & Flow here: " + link13],
   ["Coach Dunbar has coached: Oregon Ducks (ACHA), Eugene Junior Generals, Vancouver Rangers AA, Northern Storm AAA, International Falls Bantam A, Lake Superior Pirahnas AAA, and Lake Superior Stars AAA."],
+  ["Use changes of speed and direction, keep the puck close, and sell a fake with your eyes and shoulders. Practice quick moves like toe drags, pull-push, and inside-out."],
+  ["Pick a target, keep your head up, and follow through to the spot. Shoot in stride and change release points to beat the goalie."],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
