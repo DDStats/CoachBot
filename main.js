@@ -74,6 +74,8 @@ const prompts = [
   ["tips for younger players","kids hockey","youth hockey"],
   ["tips for older beginners","adult learn to play","beginner adult"],
   ["how do i improve my shooting accuracy","shooting accuracy","hit the corners","aim"],
+  ["edge and flow","edge & flow","edge and flow hockey","edgeandflow","edge and flow skills","edge and flow training"],
+  ["contact darren dunbar","contact darren","contact edge and flow","contact edge & flow","edge and flow contact","edge & flow contact","contact coach","contact form"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["what are you doing", "what is going on", "what is up", "whats up"],
@@ -113,6 +115,8 @@ var link8 = str.link("https://www.youtube.com/watch?v=yRSqqWyM74Y");
 var link9 = str.link("https://www.youtube.com/watch?v=SYPMctwC93c");
 var link10 = str.link("https://www.youtube.com/watch?v=SDLofZuBEvc");
 var link11 = str.link("https://www.youtube.com/watch?v=N7EBvc-PUII");
+var link12 = str.link("https://www.instagram.com/edgeandflowhockey");
+var link13 = str.link("https://form.123formbuilder.com/6180076/contact-form");
 const replies = [
   [link11],
   ["yep"],
@@ -181,6 +185,8 @@ const replies = [
   ["Keep it fun and focus on skating and confidence."],
   ["Start with basic skating and puck control. Consistent practice is key."],
   ["Pick small targets and shoot with intent. Accuracy improves with repetition."],
+  ["Edge & Flow focuses on edge control and skill flow. Learn more here: " + link12],
+  ["You can contact Darren Dunbar / Edge & Flow here: " + link13],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
