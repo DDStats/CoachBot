@@ -5,6 +5,7 @@ const BOT_IMG = "bot.png";
 const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
+const STORAGE_KEY = "coachbot.history";
 const prompts = [
   ["hockey dekes", "moves","hockey moves","fakes","dekes"],
   ["hockey"],
@@ -34,6 +35,45 @@ const prompts = [
   ["how do i do crossovers","crossovers"],
   ["how do i skate backwards","skating backwards","i want to skate backwards good"],
   ["do you know ddstats","who is ddstats"],
+  ["how do i shoot harder","shoot harder","hard shot","i want a harder shot","how to get a harder shot"],
+  ["how do i improve my wrist shot","wrist shot","wrist shot tips","better wrist shot"],
+  ["how do i improve my slapshot","slapshot","slap shot","slapshot tips","harder slapshot"],
+  ["how do i take a snapshot","snapshot","snap shot","snapshot tips"],
+  ["how do i improve my backhand","backhand","backhand shot","backhand tips"],
+  ["how do i win faceoffs","faceoffs","faceoff tips","win draws","win a faceoff"],
+  ["how do i get better at defense","play defense","defense tips","defensive skills"],
+  ["how do i improve my goalie skills","goalie tips","goalie","i play goalie"],
+  ["how do i stick lift","stick lift","stick lifting","lifting the stick"],
+  ["how do i poke check","poke check","pokechecking","poke check tips"],
+  ["how do i improve my endurance","stamina","conditioning","get in shape","off ice training"],
+  ["how do i practice alone","practice by myself","solo practice","train alone"],
+  ["how often should i practice","practice schedule","how much should i practice"],
+  ["what position should i play","best position","which position","i want to play wing","i want to play center","i want to play defense"],
+  ["what stick should i buy","best hockey stick","stick flex","what flex should i use","curve"],
+  ["how do i tape my stick","tape my stick","taping my stick","how to tape a hockey stick"],
+  ["what should i do before a game","pregame routine","warm up","how to warm up"],
+  ["i am nervous","nervous before game","game nerves","confidence"],
+  ["how do i improve my passing accuracy","passing accuracy","crisp passes","saucer pass"],
+  ["how do i improve edgework","edgework","edges","edge control"],
+  ["how do i stop","hockey stop","stopping","how to hockey stop"],
+  ["how do i turn","tight turns","turning","quick turns"],
+  ["how do i accelerate","explosive starts","quick starts","first steps"],
+  ["how do i read the play","hockey iq","awareness","vision"],
+  ["how do i improve my balance","balance","stability"],
+  ["can you give me a drill","practice drill","drill ideas","training drill"],
+  ["can you give me a challenge","skill challenge","challenge me"],
+  ["what should i work on today","training plan","what to practice"],
+  ["nutrition","what should i eat","hydration","diet"],
+  ["injury prevention","stretching","mobility","warmup stretches"],
+  ["how do i recover","recovery","rest day","soreness"],
+  ["who is your favorite goalie","favorite goalie"],
+  ["what is offsides","offside","what is icing","icing"],
+  ["what is the best way to learn","learning tips","how to learn faster"],
+  ["can you motivate me","motivation","pep talk"],
+  ["tips for tryouts","tryouts","make the team"],
+  ["tips for younger players","kids hockey","youth hockey"],
+  ["tips for older beginners","adult learn to play","beginner adult"],
+  ["how do i improve my shooting accuracy","shooting accuracy","hit the corners","aim"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["what are you doing", "what is going on", "what is up", "whats up"],
@@ -102,6 +142,45 @@ const replies = [
  [link7],
  [link8],
   ["yes he is a good coach and my creator"],
+  ["Focus on weight transfer, a strong bottom hand, and shooting in stride. Build power from your legs and core."],
+  ["Snap the puck off the blade with quick hands and a strong follow-through. Practice changing release points."],
+  ["Load your weight, keep your head down, and drive through the puck. Timing and flex matter."],
+  ["A snapshot is a hybrid—load slightly and release fast. Practice shooting off quick passes."],
+  ["Use soft hands and follow through to the target. Backhands get better with reps and wrist strength."],
+  ["Win faceoffs with timing, body position, and hand speed. Practice different grips and counters."],
+  ["Keep good gaps, angle attackers wide, and use active stick positioning."],
+  ["Work on stance, tracking, and recoveries. Reps on basics beat fancy saves."],
+  ["Approach from the side, lift the stick, and take the puck on your next stride."],
+  ["Keep your stick on the ice and poke when the puck is extended—then close the gap."],
+  ["Mix on-ice work with off-ice cardio and strength. Consistency beats big one-off sessions."],
+  ["Set a small space, use a ball or puck, and time your drills. Short, focused reps work best."],
+  ["Aim for 3–5 focused sessions per week. Shorter, higher-quality reps are best."],
+  ["Pick a position based on what you enjoy: speed for wing, vision for center, patience for defense."],
+  ["Choose a stick that feels balanced. Flex should match your height/strength—try before you buy."],
+  ["Start at the heel and keep it smooth. A clean tape job helps feel and control."],
+  ["Do a light sweat, dynamic stretches, and puck touches. Keep it simple and consistent."],
+  ["Nerves are normal. Focus on your first shift and simple plays to build confidence."],
+  ["Use targets and practice passing in motion. Soft hands and crisp follow-through matter."],
+  ["Edgework improves with slow, controlled drills—one-foot glides and C-cuts help a lot."],
+  ["Bend knees, rotate hips, and use both edges. Start slow and build speed."],
+  ["Lower your stance, use inside edges, and lean into the turn. Stay balanced."],
+  ["Explosive starts come from strong leg drive and short, quick strides."],
+  ["Keep your head up and scan early. Anticipate, don’t react late."],
+  ["Balance comes from core strength and knee bend. Practice one-leg glides."],
+  ["Try 5–10 minutes of edgework, then shooting, then puck control. Keep it timed."],
+  ["Challenge: 25 quick-release shots in 5 minutes. Track your score."],
+  ["Pick one skill and do 3 short drills today. Quality over quantity."],
+  ["Hydrate well and eat balanced meals with protein and carbs for energy."],
+  ["Warm up dynamically and stretch after. Mobility keeps you healthy."],
+  ["Sleep and light recovery skating help. Don’t skip rest days."],
+  ["Marc-Andre Fleury—fun and fearless."],
+  ["Offsides is when a player enters the zone before the puck. Icing is shooting it past the far red line without being touched."],
+  ["Break skills into small steps and practice consistently."],
+  ["You’ve got this. Focus on effort and one small win each session."],
+  ["Be early, work hard, and keep shifts short. Coaches notice effort."],
+  ["Keep it fun and focus on skating and confidence."],
+  ["Start with basic skating and puck control. Consistent practice is key."],
+  ["Pick small targets and shoot with intent. Accuracy improves with repetition."],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
@@ -140,6 +219,8 @@ const alternative = [
   "I don't understand :/"
 ]
 const robot = ["How do you do, fellow human", "I am not a bot"];
+
+restoreHistory();
 msgerForm.addEventListener("submit", event => {
   event.preventDefault();
   const msgText = msgerInput.value;
@@ -150,27 +231,68 @@ msgerForm.addEventListener("submit", event => {
 });
 function output(input) {
   let product;
-  let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
-  text = text
-    .replace(/ a /g, " ")  
-    .replace(/i feel /g, "")
-    .replace(/whats/g, "what is")
-    .replace(/please /g, "")
-    .replace(/ please/g, "")
-    .replace(/r u/g, "are you");
-  if (compare(prompts, replies, text)) {
-    product = compare(prompts, replies, text);
-  } else if (text.match(/thank/gi)) {
-    product = "You're welcome!"
-  } else if (text.match(/(robot|bot|robo)/gi)) {
+  const text = normalize(input);
+
+  product = bestReply(text);
+
+  if (!product && text.match(/thank/gi)) {
+    product = "You're welcome!";
+  } else if (!product && text.match(/(robot|bot|robo)/gi)) {
     product = robot[Math.floor(Math.random() * robot.length)];
-  } else {
+  } else if (!product) {
     product = alternative[Math.floor(Math.random() * alternative.length)];
   }
+
   const delay = input.split(" ").length * 100;
   setTimeout(() => {
     addChat(BOT_NAME, BOT_IMG, "left", product);
   }, delay);
+}
+
+function normalize(input) {
+  return input
+    .toLowerCase()
+    .replace(/[^\w\s]/gi, "")
+    .replace(/[\d]/gi, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/ a /g, " ")
+    .replace(/i feel /g, "")
+    .replace(/whats/g, "what is")
+    .replace(/please /g, "")
+    .replace(/r u/g, "are you");
+}
+
+function bestReply(text) {
+  let bestScore = 0;
+  let bestIndex = -1;
+
+  for (let i = 0; i < prompts.length; i++) {
+    let groupScore = 0;
+    for (let j = 0; j < prompts[i].length; j++) {
+      const promptText = prompts[i][j];
+      const score = keywordScore(text, promptText);
+      if (score > groupScore) groupScore = score;
+    }
+    if (groupScore > bestScore) {
+      bestScore = groupScore;
+      bestIndex = i;
+    }
+  }
+
+  if (bestScore < 0.4 || bestIndex === -1) return "";
+  const replyList = replies[bestIndex];
+  return replyList[Math.floor(Math.random() * replyList.length)];
+}
+
+function keywordScore(input, prompt) {
+  const inputTokens = new Set(input.split(" "));
+  const promptTokens = new Set(prompt.split(" "));
+  let hits = 0;
+  for (const t of promptTokens) {
+    if (inputTokens.has(t)) hits++;
+  }
+  return promptTokens.size ? hits / promptTokens.size : 0;
 }
 function compare(promptsArray, repliesArray, string) {
   let reply;
@@ -205,6 +327,7 @@ function addChat(name, img, side, text) {
   `;
   msgerChat.insertAdjacentHTML("beforeend", msgHTML);
   msgerChat.scrollTop += 500;
+  saveHistory();
 }
 function get(selector, root = document) {
   return root.querySelector(selector);
@@ -213,6 +336,17 @@ function formatDate(date) {
   const h = "0" + date.getHours();
   const m = "0" + date.getMinutes();
   return `${h.slice(-2)}:${m.slice(-2)}`;
+}
+function restoreHistory() {
+  const html = localStorage.getItem(STORAGE_KEY);
+  if (html) {
+    msgerChat.innerHTML = html;
+    msgerChat.scrollTop = msgerChat.scrollHeight;
+  }
+}
+
+function saveHistory() {
+  localStorage.setItem(STORAGE_KEY, msgerChat.innerHTML);
 }
 function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
