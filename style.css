@@ -2,6 +2,7 @@
 :root {
   --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --msger-bg: #fff;
+  --chat-box-accent: #7df9ff;
   --left-msg-bg: linear-gradient(to right,#d611f4, #88419b);
   --right-msg-bg: #ececec;
 }
@@ -40,7 +41,7 @@ body {
   justify-content: center;
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
-  background: #d611f4;
+  background: var(--chat-box-accent);
   color: gold;
 }
 .msger-header-title{
@@ -124,7 +125,7 @@ body {
 .msger-inputarea {
   display: flex;
   padding: 10px;
-  background: #d611f4;
+  background: var(--chat-box-accent);
   border-radius: 0px 0px 10px 10px;
 }
 .msger-inputarea * {
