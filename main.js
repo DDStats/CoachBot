@@ -76,6 +76,7 @@ const prompts = [
   ["how do i improve my shooting accuracy","shooting accuracy","hit the corners","aim"],
   ["edge and flow","edge & flow","edge and flow hockey","edgeandflow","edge and flow skills","edge and flow training"],
   ["contact darren dunbar","contact darren","contact edge and flow","contact edge & flow","edge and flow contact","edge & flow contact","contact coach","contact form"],
+  ["teams coach dunbar has coached","teams coached by coach dunbar","what teams has coach dunbar coached","coach dunbar teams","darren dunbar teams","coached teams"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["what are you doing", "what is going on", "what is up", "whats up"],
@@ -187,6 +188,7 @@ const replies = [
   ["Pick small targets and shoot with intent. Accuracy improves with repetition."],
   ["Edge & Flow focuses on edge control and skill flow. Learn more here: " + link12],
   ["You can contact Darren Dunbar / Edge & Flow here: " + link13],
+  ["Coach Dunbar has coached: Oregon Ducks (ACHA), Eugene Junior Generals, Vancouver Rangers AA, Northern Storm AAA, International Falls Bantam A, Lake Superior Pirahnas AAA, and Lake Superior Stars AAA."],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
