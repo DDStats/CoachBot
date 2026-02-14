@@ -80,6 +80,7 @@ const prompts = [
   ["teams coach dunbar has coached","teams coached by coach dunbar","what teams has coach dunbar coached","coach dunbar teams","darren dunbar teams","coached teams"],
   ["how do i dangle","how do i dangle the puck","how do i beat a defender","how do i beat an opponent","stick skills to beat a defender","dangles"],
   ["how do i snipe","snipe","how do i shoot accurately","shoot accurately","how do i pick corners","beat the goalie","shoot the puck accurately"],
+  ["hockey coach gt","what is hockey coach gt","tell me about hockey coach gt","coach gt","coaching app","video analysis app","hockey coaching app"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["what are you doing", "what is going on", "what is up", "whats up"],
@@ -121,6 +122,7 @@ var link10 = str.link("https://www.youtube.com/watch?v=SDLofZuBEvc");
 var link11 = str.link("https://www.youtube.com/watch?v=N7EBvc-PUII");
 var link12 = str.link("https://www.instagram.com/edgeandflowhockey");
 var link13 = str.link("https://form.123formbuilder.com/6180076/contact-form");
+var link14 = str.link("https://www.linkedin.com/in/darren-dunbar/");
 const replies = [
   [link11],
   ["yep"],
@@ -195,6 +197,7 @@ const replies = [
   ["Coach Dunbar has coached: Oregon Ducks (ACHA), Eugene Junior Generals, Vancouver Rangers AA, Northern Storm AAA, International Falls Bantam A, Lake Superior Pirahnas AAA, and Lake Superior Stars AAA."],
   ["Use changes of speed and direction, keep the puck close, and sell a fake with your eyes and shoulders. Practice quick moves like toe drags, pull-push, and inside-out."],
   ["Pick a target, keep your head up, and follow through to the spot. Shoot in stride and change release points to beat the goalie."],
+  ["Hockey Coach GT is a hockey coaching app that analyzes video and helps tag plays, track players, and train models to improve coaching insights. Check out my LinkedIn for more: " + link14],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   [
     "Fine... how are you?",
