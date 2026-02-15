@@ -200,6 +200,8 @@ const replies = [
   ["Use changes of speed and direction, keep the puck close, and sell a fake with your eyes and shoulders. Practice quick moves like toe drags, pull-push, and inside-out."],
   ["Pick a target, keep your head up, and follow through to the spot. Shoot in stride and change release points to beat the goalie."],
   ["Hockey Coach GT is a hockey coaching app that analyzes video and helps tag plays, track players, and train models to improve coaching insights. Check out my LinkedIn for more: " + link14],
+  ["I can pull NHL scores. Ask me: nhl scores"],
+  ["I can pull NHL stats leaders. Ask me: nhl stats"],
   ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
   ["Fine... how are you?", "Pretty well, how are you?", "Fantastic, how are you?"],
   ["Nothing much", "About to go to sleep", "Can you guess?", "I don't know actually"],
