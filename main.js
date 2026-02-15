@@ -245,6 +245,12 @@ function output(input) {
   let product;
   const text = normalize(input);
 
+  // Check for NHL game predictions request
+  if (text.match(/nhl (predictions|prediction)/gi) || text.match(/(predict nhl|game predictions|who will win)/gi)) {
+    fetchNHLPredictions();
+    return;
+  }
+
   // Check for NHL scores request
   if (text.match(/nhl (scores|games|results)/gi) || text.match(/(hockey scores|latest nhl|recent nhl|todays nhl)/gi)) {
     fetchNHLScores();
@@ -549,6 +555,93 @@ async function fetchNHLStandings() {
     setTimeout(() => {
       const lastMsg = msgerChat.lastElementChild;
       lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL standings right now. Try checking NHL.com standings.";
+      saveHistory();
+    }, 500);
+  }
+}
+
+async function fetchNHLPredictions() {
+  const loadingMsg = "Generating NHL game predictions...";
+  addChat(BOT_NAME, BOT_IMG, "left", loadingMsg);
+
+  try {
+    const corsProxy = 'https://corsproxy.io/?';
+    const today = new Date().toISOString().split('T')[0];
+    const scoreUrl = `https://api-web.nhle.com/v1/score/${today}`;
+    const standingsUrl = 'https://api-web.nhle.com/v1/standings/now';
+
+    const [scoreRes, standingsRes] = await Promise.all([
+      fetch(corsProxy + encodeURIComponent(scoreUrl)),
+      fetch(corsProxy + encodeURIComponent(standingsUrl))
+    ]);
+
+    if (!scoreRes.ok || !standingsRes.ok) {
+      throw new Error('Failed to fetch NHL data');
+    }
+
+    const scoreData = await scoreRes.json();
+    const standingsData = await standingsRes.json();
+
+    const games = Array.isArray(scoreData.games) ? scoreData.games : [];
+    const standings = Array.isArray(standingsData.standings) ? standingsData.standings : [];
+
+    if (games.length === 0) {
+      setTimeout(() => {
+        const lastMsg = msgerChat.lastElementChild;
+        lastMsg.querySelector('.msg-text').textContent = "No NHL games scheduled today, so no predictions right now.";
+        saveHistory();
+      }, 500);
+      return;
+    }
+
+    const pointsPctByTeam = new Map();
+    standings.forEach(team => {
+      const abbr = team.teamAbbrev?.default;
+      const pointsPct = Number(team.pointPctg || 0);
+      if (abbr) pointsPctByTeam.set(abbr, pointsPct);
+    });
+
+    let predHTML = "<strong>NHL Predictions (simple model):</strong><br><br>";
+
+    games.forEach(game => {
+      const away = game.awayTeam?.abbrev || 'AWY';
+      const home = game.homeTeam?.abbrev || 'HME';
+      const gameState = game.gameState || '';
+
+      const awayPct = pointsPctByTeam.get(away) ?? 0.5;
+      const homePct = pointsPctByTeam.get(home) ?? 0.5;
+
+      const homeBoost = 0.015;
+      const awayScore = Math.max(0.001, awayPct);
+      const homeScore = Math.max(0.001, homePct + homeBoost);
+      const total = awayScore + homeScore;
+
+      const awayProb = Math.round((awayScore / total) * 100);
+      const homeProb = 100 - awayProb;
+      const pick = homeProb >= awayProb ? home : away;
+
+      if (gameState === 'FUT' || gameState === 'PRE') {
+        predHTML += `${away} @ ${home} → Pick: <strong>${pick}</strong> (${away} ${awayProb}% / ${home} ${homeProb}%)<br>`;
+      }
+    });
+
+    if (!predHTML.includes('→ Pick:')) {
+      predHTML += "No upcoming games left today to predict.";
+    } else {
+      predHTML += "<br><em>Based on current points percentage + small home-ice boost.</em>";
+    }
+
+    setTimeout(() => {
+      const lastMsg = msgerChat.lastElementChild;
+      lastMsg.querySelector('.msg-text').innerHTML = predHTML;
+      saveHistory();
+    }, 500);
+
+  } catch (error) {
+    console.error('NHL Predictions API Error:', error);
+    setTimeout(() => {
+      const lastMsg = msgerChat.lastElementChild;
+      lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't generate NHL predictions right now.";
       saveHistory();
     }, 500);
   }
