@@ -603,9 +603,19 @@ async function fetchNHLPredictions() {
 
     let predHTML = "<strong>NHL Predictions (simple model):</strong><br><br>";
 
-    games.forEach(game => {
-      const away = game.awayTeam?.abbrev || 'AWY';
-      const home = game.homeTeam?.abbrev || 'HME';
+    let gamesToPredict = games.filter(game => {
+      const state = game.gameState || '';
+      return state === 'FUT' || state === 'PRE' || state === 'LIVE' || state === 'CRIT';
+    });
+    let usingCompletedGames = false;
+    if (gamesToPredict.length === 0) {
+      gamesToPredict = games;
+      usingCompletedGames = true;
+    }
+
+    gamesToPredict.forEach(game => {
+      const away = game.awayTeam?.abbrev || game.awayTeam?.abbrev?.default || 'AWY';
+      const home = game.homeTeam?.abbrev || game.homeTeam?.abbrev?.default || 'HME';
       const gameState = game.gameState || '';
 
       const awayPct = pointsPctByTeam.get(away) ?? 0.5;
@@ -620,14 +630,21 @@ async function fetchNHLPredictions() {
       const homeProb = 100 - awayProb;
       const pick = homeProb >= awayProb ? home : away;
 
-      if (gameState === 'FUT' || gameState === 'PRE') {
-        predHTML += `${away} @ ${home} → Pick: <strong>${pick}</strong> (${away} ${awayProb}% / ${home} ${homeProb}%)<br>`;
-      }
+      const stateLabel = gameState === 'LIVE' || gameState === 'CRIT'
+        ? 'Live'
+        : gameState === 'FUT' || gameState === 'PRE'
+          ? 'Upcoming'
+          : 'Final';
+
+      predHTML += `${away} @ ${home} (${stateLabel}) → Pick: <strong>${pick}</strong> (${away} ${awayProb}% / ${home} ${homeProb}%)<br>`;
     });
 
     if (!predHTML.includes('→ Pick:')) {
-      predHTML += "No upcoming games left today to predict.";
+      predHTML += "No games found to generate predictions.";
     } else {
+      if (usingCompletedGames) {
+        predHTML += "<br><em>No upcoming games remained today, so these are model picks for completed games.</em><br>";
+      }
       predHTML += "<br><em>Based on current points percentage + small home-ice boost.</em>";
     }
 
