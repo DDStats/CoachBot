@@ -251,8 +251,14 @@ function output(input) {
     return;
   }
   
+  // Check for NHL standings request
+  if (text.match(/nhl standings/gi) || text.match(/(standings|wild card|wildcard)/gi)) {
+    fetchNHLStandings();
+    return;
+  }
+
   // Check for NHL stats request
-  if (text.match(/nhl (stats|standings|leaders)/gi) || text.match(/(top nhl scorers|nhl point leaders|nhl goal leaders|who leads nhl)/gi)) {
+  if (text.match(/nhl (stats|leaders)/gi) || text.match(/(top nhl scorers|nhl point leaders|nhl goal leaders|who leads nhl)/gi)) {
     fetchNHLStats();
     return;
   }
@@ -488,6 +494,61 @@ async function fetchNHLStats() {
     setTimeout(() => {
       const lastMsg = msgerChat.lastElementChild;
       lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL stats right now. Try checking NHL.com for the latest stats!";
+      saveHistory();
+    }, 500);
+  }
+}
+
+async function fetchNHLStandings() {
+  const loadingMsg = "Fetching NHL standings...";
+  addChat(BOT_NAME, BOT_IMG, "left", loadingMsg);
+
+  try {
+    const corsProxy = 'https://corsproxy.io/?';
+    const standingsUrl = 'https://api-web.nhle.com/v1/standings/now';
+    const response = await fetch(corsProxy + encodeURIComponent(standingsUrl));
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const teams = Array.isArray(data.standings) ? data.standings : [];
+
+    if (teams.length === 0) {
+      setTimeout(() => {
+        const lastMsg = msgerChat.lastElementChild;
+        lastMsg.querySelector('.msg-text').textContent = "No NHL standings data available right now.";
+        saveHistory();
+      }, 500);
+      return;
+    }
+
+    const topTeams = [...teams]
+      .sort((a, b) => (b.points || 0) - (a.points || 0))
+      .slice(0, 10);
+
+    let standingsHTML = "<strong>NHL Standings (Top 10 by Points):</strong><br><br>";
+    topTeams.forEach((team, i) => {
+      const teamName = team.teamAbbrev?.default || team.teamName?.default || "Team";
+      const points = team.points || 0;
+      const wins = team.wins || 0;
+      const losses = team.losses || 0;
+      const ot = team.otLosses || 0;
+      standingsHTML += `${i + 1}. ${teamName} - ${points} pts (${wins}-${losses}-${ot})<br>`;
+    });
+
+    setTimeout(() => {
+      const lastMsg = msgerChat.lastElementChild;
+      lastMsg.querySelector('.msg-text').innerHTML = standingsHTML;
+      saveHistory();
+    }, 500);
+
+  } catch (error) {
+    console.error('NHL Standings API Error:', error);
+    setTimeout(() => {
+      const lastMsg = msgerChat.lastElementChild;
+      lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL standings right now. Try checking NHL.com standings.";
       saveHistory();
     }, 500);
   }
