@@ -5,7 +5,7 @@ const BOT_IMG = "bot.png";
 const PERSON_IMG = "user.png";
 const BOT_NAME = "CoachBot";
 const PERSON_NAME = "Player";
-const STORAGE_KEY = "coachbot.history";
+const STORAGE_KEY = "coachbot.history.v2";
 const prompts = [
   ["hockey dekes", "moves","hockey moves","fakes","dekes"],
   ["hockey"],
