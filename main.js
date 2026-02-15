@@ -379,7 +379,17 @@ async function fetchNHLScores() {
   
   try {
     const today = new Date().toISOString().split('T')[0];
-    const response = await fetch(`https://api-web.nhle.com/v1/score/${today}`);
+    const response = await fetch(`https://api-web.nhle.com/v1/score/${today}`, {
+      mode: 'cors',
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
     const data = await response.json();
     
     if (!data.games || data.games.length === 0) {
@@ -394,11 +404,11 @@ async function fetchNHLScores() {
     
     let scoresHTML = "<strong>Today's NHL Games:</strong><br><br>";
     data.games.forEach(game => {
-      const away = game.awayTeam.abbrev;
-      const home = game.homeTeam.abbrev;
-      const awayScore = game.awayTeam.score || 0;
-      const homeScore = game.homeTeam.score || 0;
-      const status = game.gameState;
+      const away = game.awayTeam?.abbrev || game.awayTeam?.name?.default || 'TBD';
+      const home = game.homeTeam?.abbrev || game.homeTeam?.name?.default || 'TBD';
+      const awayScore = game.awayTeam?.score || 0;
+      const homeScore = game.homeTeam?.score || 0;
+      const status = game.gameState || game.status;
       
       if (status === 'FUT' || status === 'PRE') {
         scoresHTML += `${away} @ ${home} - Upcoming<br>`;
@@ -416,9 +426,10 @@ async function fetchNHLScores() {
     }, 500);
     
   } catch (error) {
+    console.error('NHL API Error:', error);
     setTimeout(() => {
       const lastMsg = msgerChat.lastElementChild;
-      lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL scores right now. Try again later!";
+      lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL scores right now. The API may be down or there might be a CORS issue. Try again later!";
       saveHistory();
     }, 500);
   }
