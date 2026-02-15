@@ -82,6 +82,7 @@ const prompts = [
   ["how do i snipe","snipe","how do i shoot accurately","shoot accurately","how do i pick corners","beat the goalie","shoot the puck accurately"],
   ["hockey coach gt","what is hockey coach gt","tell me about hockey coach gt","coach gt","coaching app","video analysis app","hockey coaching app"],
   ["nhl scores","nhl games","hockey scores","latest nhl scores","recent nhl scores","nhl results","nhl games today","todays nhl games"],
+  ["nhl stats","nhl standings","nhl leaders","top nhl scorers","nhl point leaders","who leads nhl in points","nhl goal leaders"],
   ["hi", "hey", "hello", "good morning", "good afternoon"],
   ["how are you", "how is life", "how are things"],
   ["what are you doing", "what is going on", "what is up", "whats up"],
@@ -256,6 +257,12 @@ function output(input) {
     fetchNHLScores();
     return;
   }
+  
+  // Check for NHL stats request
+  if (text.match(/nhl (stats|standings|leaders)/gi) || text.match(/(top nhl scorers|nhl point leaders|nhl goal leaders|who leads nhl)/gi)) {
+    fetchNHLStats();
+    return;
+  }
 
   product = bestReply(text);
 
@@ -428,6 +435,66 @@ async function fetchNHLScores() {
     setTimeout(() => {
       const lastMsg = msgerChat.lastElementChild;
       lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL scores right now. Try checking NHL.com for the latest scores!";
+      saveHistory();
+    }, 500);
+  }
+}
+
+async function fetchNHLStats() {
+  const loadingMsg = "Fetching NHL stats leaders...";
+  addChat(BOT_NAME, BOT_IMG, "left", loadingMsg);
+  
+  try {
+    // Fetch current season stats leaders
+    const corsProxy = 'https://corsproxy.io/?';
+    const statsUrl = 'https://api-web.nhle.com/v1/skater-stats-leaders/current';
+    const response = await fetch(corsProxy + encodeURIComponent(statsUrl));
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    let statsHTML = "<strong>NHL Stats Leaders (Current Season):</strong><br><br>";
+    
+    // Points leaders
+    if (data.points && data.points.length > 0) {
+      statsHTML += "<strong>Points:</strong><br>";
+      data.points.slice(0, 5).forEach((player, i) => {
+        statsHTML += `${i + 1}. ${player.firstName.default} ${player.lastName.default} (${player.teamAbbrev}) - ${player.value} pts<br>`;
+      });
+      statsHTML += "<br>";
+    }
+    
+    // Goals leaders
+    if (data.goals && data.goals.length > 0) {
+      statsHTML += "<strong>Goals:</strong><br>";
+      data.goals.slice(0, 5).forEach((player, i) => {
+        statsHTML += `${i + 1}. ${player.firstName.default} ${player.lastName.default} (${player.teamAbbrev}) - ${player.value} G<br>`;
+      });
+      statsHTML += "<br>";
+    }
+    
+    // Assists leaders
+    if (data.assists && data.assists.length > 0) {
+      statsHTML += "<strong>Assists:</strong><br>";
+      data.assists.slice(0, 5).forEach((player, i) => {
+        statsHTML += `${i + 1}. ${player.firstName.default} ${player.lastName.default} (${player.teamAbbrev}) - ${player.value} A<br>`;
+      });
+    }
+    
+    setTimeout(() => {
+      const lastMsg = msgerChat.lastElementChild;
+      lastMsg.querySelector('.msg-text').innerHTML = statsHTML;
+      saveHistory();
+    }, 500);
+    
+  } catch (error) {
+    console.error('NHL Stats API Error:', error);
+    setTimeout(() => {
+      const lastMsg = msgerChat.lastElementChild;
+      lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL stats right now. Try checking NHL.com for the latest stats!";
       saveHistory();
     }, 500);
   }
