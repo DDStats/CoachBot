@@ -379,12 +379,10 @@ async function fetchNHLScores() {
   
   try {
     const today = new Date().toISOString().split('T')[0];
-    const response = await fetch(`https://api-web.nhle.com/v1/score/${today}`, {
-      mode: 'cors',
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
+    // Use CORS proxy to bypass CORS restrictions on static sites
+    const apiUrl = `https://api-web.nhle.com/v1/score/${today}`;
+    const corsProxy = 'https://corsproxy.io/?';
+    const response = await fetch(corsProxy + encodeURIComponent(apiUrl));
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -429,7 +427,7 @@ async function fetchNHLScores() {
     console.error('NHL API Error:', error);
     setTimeout(() => {
       const lastMsg = msgerChat.lastElementChild;
-      lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL scores right now. The API may be down or there might be a CORS issue. Try again later!";
+      lastMsg.querySelector('.msg-text').textContent = "Sorry, couldn't fetch NHL scores right now. Try checking NHL.com for the latest scores!";
       saveHistory();
     }, 500);
   }
